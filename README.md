@@ -1,4 +1,4 @@
-### She Code Africa - Week 1
+### She Code Africa - Week 2
 
 #### Task
 ##### Write a simple script to run on all Vue lifecycles and state their order
