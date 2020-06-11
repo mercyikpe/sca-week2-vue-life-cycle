@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue Life Cycle</title>
+	<style>
+
+		h3 {
+			margin: 40px 0 0;
+		}
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+		li {
+			display: inline-block;
+			margin: 0 10px;
+		}
+		a {
+			color: #42b983;
+		}
+	</style>
+</head>
+
+<body>
+<div id="app">
+	<div>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	const app = new Vue({
+		el: '#app',
+			props: {
+				msg: String
+			},
+			data: {
+				books: 0,
+				hello: 'welcome to Vue JS'
+			},
+			beforeCreate() {
+				alert('beforCreate hook has been called');
+				console.log('beforCreate hook has been called');
+			},
+			created() {
+				alert('Created hook has been called');
+				console.log(`books is of type ${typeof this.books}`);
+			},
+			beforeMount() {
+				alert('beforeMount is called')
+			},
+			beforeUpdate(){
+				alert('beforeUpdate hook has been called');
+			},
+			updated(){
+				alert('Updated hook has been called');
+			},
+			mounted(){
+				this.$data.hello= 'lalalalallalalalalaalal';
+			},
+			beforeDestroy() {
+				this.books = null
+				delete this.books
+			},
+			destroyed() {
+				this.$destroy()
+				console.log(this)
+			}
+		});
+</script>
+</body>
+
+</html>
+
+
+<!-- Week 2:
+1. Write a simple script to run on all Vue lifecycles and state their order
+2. Write a program that combines first name and last name of a user input to full name
+
+-->
